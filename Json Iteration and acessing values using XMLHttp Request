@@ -1,0 +1,26 @@
+//Given Assignment Link was not working.So tired with different Json file.
+const getBlog=()=>{
+const xhr=new XMLHttpRequest();
+xhr.open("GET","https://60c98aa8772a760017203b57.mockapi.io/blogs");
+xhr.responseType="json";
+xhr.onload=()=>{
+    blogs=(xhr.response);
+    for(let blog in blogs)//for in Loop
+    {
+       if(blogs[blog].id>=8)
+       {
+           blogs[blog].content="guvi";
+    }
+    console.log(blogs[blog])
+    }
+
+    for(let blog of blogs)//for of Loop
+    { 
+        console.log(blog.heading);
+    }
+
+}
+
+xhr.send();
+}
+getBlog();
