@@ -1,0 +1,20 @@
+Use the same rest countries and print all countries name, region, sub region and population
+//to displays all the flag in json file
+const getBlog=()=>{
+const xhr=new XMLHttpRequest();
+xhr.open("GET","https://restcountries.com/v3/all");
+xhr.responseType="json";
+xhr.onload=()=>{
+    obj=xhr.response;
+    for(key of obj)
+    {
+        console.log(key.name,key.region,key.subregion,key.population);
+        
+    }
+    
+
+}
+
+xhr.send();
+}
+getBlog();
